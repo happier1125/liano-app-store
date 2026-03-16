@@ -1,0 +1,72 @@
+name: Sync All Apps Updates
+
+on:
+  schedule:
+    - cron: '0 0 * * *' 
+  workflow_dispatch: 
+
+jobs:
+  sync-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch Updates for PiliPlus (App 1)
+        run: |
+          echo "开始抓取 PiliPlus..."
+          curl -s https://api.github.com/repos/bggRGjQaUbCoE/PiliPlus/releases/latest > release_pili.json
+          
+          IPA_URL_PILI=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .browser_download_url' release_pili.json | head -n 1)
+          IPA_SIZE_PILI=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .size' release_pili.json | head -n 1)
+          TAG_NAME_PILI=$(jq -r '.tag_name' release_pili.json)
+          
+          if [ "$TAG_NAME_PILI" != "null" ] && [ -n "$IPA_URL_PILI" ]; then
+            # 精准替换 PiliPlus 数据，保留基础描述，写入真实大小和多行更新日志
+            jq --arg url "$IPA_URL_PILI" --argjson size "$IPA_SIZE_PILI" --slurpfile rel release_pili.json \
+               '.apps[0].version = $rel[0].tag_name | 
+                .apps[0].versionDate = $rel[0].published_at | 
+                .apps[0].versionDescription = $rel[0].body | 
+                .apps[0].downloadURL = $url | 
+                .apps[0].size = $size |
+                .apps[0].versions = [{"version": $rel[0].tag_name, "date": $rel[0].published_at, "localizedDescription": $rel[0].body, "downloadURL": $url, "size": $size}]' apps.json > tmp.json && mv tmp.json apps.json
+            echo "PiliPlus 数据更新成功！"
+          else
+            echo "未抓取到 PiliPlus，跳过。"
+          fi
+
+      - name: Fetch Updates for Read (App 2)
+        run: |
+          echo "开始抓取 阅读..."
+          curl -s https://api.github.com/repos/AREKERT/read/releases/latest > release_read.json
+          
+          IPA_URL_READ=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .browser_download_url' release_read.json | head -n 1)
+          IPA_SIZE_READ=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .size' release_read.json | head -n 1)
+          TAG_NAME_READ=$(jq -r '.tag_name' release_read.json)
+          
+          if [ "$TAG_NAME_READ" != "null" ] && [ -n "$IPA_URL_READ" ]; then
+            # 精准替换 阅读 数据，保留基础描述，写入真实大小和多行更新日志
+            jq --arg url "$IPA_URL_READ" --argjson size "$IPA_SIZE_READ" --slurpfile rel release_read.json \
+               '.apps[1].version = $rel[0].tag_name | 
+                .apps[1].versionDate = $rel[0].published_at | 
+                .apps[1].versionDescription = $rel[0].body | 
+                .apps[1].downloadURL = $url | 
+                .apps[1].size = $size |
+                .apps[1].versions = [{"version": $rel[0].tag_name, "date": $rel[0].published_at, "localizedDescription": $rel[0].body, "downloadURL": $url, "size": $size}]' apps.json > tmp.json && mv tmp.json apps.json
+            echo "阅读 数据更新成功！"
+          else
+            echo "未抓取到 阅读，跳过。"
+          fi
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add apps.json
+          
+          if git diff --staged --quiet; then
+            echo "所有软件版本均无变化，无需更新。"
+          else
+            git commit -m "Auto-sync Liano's ipasource updates"
+            git push
+          fi
