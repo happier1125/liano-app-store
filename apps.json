@@ -1,0 +1,34 @@
+{
+  "name": "Liano's ipasource",
+  "identifier": "com.happier1125.ipasource",
+  "sourceURL": "即将替换为真实URL",
+  "iconURL": "https://raw.githubusercontent.com/happier1125/liano-app-store/refs/heads/main/IMG_0146.jpeg",
+  "apps": [
+    {
+      "name": "PiliPlus",
+      "bundleIdentifier": "com.bggRGjQaUbCoE.piliplus",
+      "developerName": "bggRGjQaUbCoE",
+      "version": "1.0.0",
+      "versionDate": "2024-01-01T00:00:00Z",
+      "versionDescription": "初始化",
+      "localizedDescription": "PiliPlus 客户端，专为更好的体验而生。",
+      "downloadURL": "等待抓取",
+      "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
+      "tintColor": "#000000",
+      "size": 1000000
+    },
+    {
+      "name": "阅读",
+      "bundleIdentifier": "com.arekert.read",
+      "developerName": "AREKERT",
+      "version": "1.0.0",
+      "versionDate": "2024-01-01T00:00:00Z",
+      "versionDescription": "初始化",
+      "localizedDescription": "AREKERT 的 Read 阅读器，纯净的阅读体验。",
+      "downloadURL": "等待抓取",
+      "iconURL": "https://raw.githubusercontent.com/AREKERT/read/refs/heads/main/img/AppIcon.png",
+      "tintColor": "#000000",
+      "size": 1000000
+    }
+  ]
+}
