@@ -14,69 +14,58 @@ jobs:
 
       - name: Fetch Updates for PiliPlus (App 1)
         run: |
-          echo "开始抓取 PiliPlus..."
           curl -s https://api.github.com/repos/bggRGjQaUbCoE/PiliPlus/releases/latest > release_pili.json
-          
           IPA_URL_PILI=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .browser_download_url' release_pili.json | head -n 1)
           IPA_SIZE_PILI=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .size' release_pili.json | head -n 1)
           TAG_NAME_PILI=$(jq -r '.tag_name' release_pili.json)
-          
           if [ "$TAG_NAME_PILI" != "null" ] && [ -n "$IPA_URL_PILI" ]; then
             jq --arg url "$IPA_URL_PILI" --argjson size "$IPA_SIZE_PILI" --slurpfile rel release_pili.json \
-               '.apps[0].version = $rel[0].tag_name | 
-                .apps[0].versionDate = $rel[0].published_at | 
-                .apps[0].versionDescription = $rel[0].body | 
-                .apps[0].downloadURL = $url | 
-                .apps[0].size = $size |
-                .apps[0].versions = [{"version": $rel[0].tag_name, "date": $rel[0].published_at, "localizedDescription": $rel[0].body, "downloadURL": $url, "size": $size}]' apps.json > tmp.json && mv tmp.json apps.json
-            echo "PiliPlus 更新成功！"
-          else
-            echo "未抓取到 PiliPlus，跳过。"
+               '.apps[0].version = $rel[0].tag_name | .apps[0].versionDate = $rel[0].published_at | .apps[0].versionDescription = $rel[0].body | .apps[0].downloadURL = $url | .apps[0].size = $size | .apps[0].versions = [{"version": $rel[0].tag_name, "date": $rel[0].published_at, "localizedDescription": $rel[0].body, "downloadURL": $url, "size": $size}]' apps.json > tmp.json && mv tmp.json apps.json
           fi
 
       - name: Fetch Updates for Read (App 2)
         run: |
-          echo "开始抓取 阅读..."
           curl -s https://api.github.com/repos/AREKERT/read/releases/latest > release_read.json
-          
           IPA_URL_READ=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .browser_download_url' release_read.json | head -n 1)
           IPA_SIZE_READ=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .size' release_read.json | head -n 1)
           TAG_NAME_READ=$(jq -r '.tag_name' release_read.json)
-          
           if [ "$TAG_NAME_READ" != "null" ] && [ -n "$IPA_URL_READ" ]; then
             jq --arg url "$IPA_URL_READ" --argjson size "$IPA_SIZE_READ" --slurpfile rel release_read.json \
-               '.apps[1].version = $rel[0].tag_name | 
-                .apps[1].versionDate = $rel[0].published_at | 
-                .apps[1].versionDescription = $rel[0].body | 
-                .apps[1].downloadURL = $url | 
-                .apps[1].size = $size |
-                .apps[1].versions = [{"version": $rel[0].tag_name, "date": $rel[0].published_at, "localizedDescription": $rel[0].body, "downloadURL": $url, "size": $size}]' apps.json > tmp.json && mv tmp.json apps.json
-            echo "阅读 更新成功！"
-          else
-            echo "未抓取到 阅读，跳过。"
+               '.apps[1].version = $rel[0].tag_name | .apps[1].versionDate = $rel[0].published_at | .apps[1].versionDescription = $rel[0].body | .apps[1].downloadURL = $url | .apps[1].size = $size | .apps[1].versions = [{"version": $rel[0].tag_name, "date": $rel[0].published_at, "localizedDescription": $rel[0].body, "downloadURL": $url, "size": $size}]' apps.json > tmp.json && mv tmp.json apps.json
           fi
 
       - name: Fetch Updates for Feather (App 3)
         run: |
-          echo "开始抓取 Feather..."
           curl -s https://api.github.com/repos/CLARATION/Feather/releases/latest > release_feather.json
-          
           IPA_URL_FEATHER=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .browser_download_url' release_feather.json | head -n 1)
           IPA_SIZE_FEATHER=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .size' release_feather.json | head -n 1)
           TAG_NAME_FEATHER=$(jq -r '.tag_name' release_feather.json)
-          
           if [ "$TAG_NAME_FEATHER" != "null" ] && [ -n "$IPA_URL_FEATHER" ]; then
-            # 精准替换 Feather 数据，对应的是 .apps[2]
             jq --arg url "$IPA_URL_FEATHER" --argjson size "$IPA_SIZE_FEATHER" --slurpfile rel release_feather.json \
-               '.apps[2].version = $rel[0].tag_name | 
-                .apps[2].versionDate = $rel[0].published_at | 
-                .apps[2].versionDescription = $rel[0].body | 
-                .apps[2].downloadURL = $url | 
-                .apps[2].size = $size |
-                .apps[2].versions = [{"version": $rel[0].tag_name, "date": $rel[0].published_at, "localizedDescription": $rel[0].body, "downloadURL": $url, "size": $size}]' apps.json > tmp.json && mv tmp.json apps.json
-            echo "Feather 更新成功！"
+               '.apps[2].version = $rel[0].tag_name | .apps[2].versionDate = $rel[0].published_at | .apps[2].versionDescription = $rel[0].body | .apps[2].downloadURL = $url | .apps[2].size = $size | .apps[2].versions = [{"version": $rel[0].tag_name, "date": $rel[0].published_at, "localizedDescription": $rel[0].body, "downloadURL": $url, "size": $size}]' apps.json > tmp.json && mv tmp.json apps.json
+          fi
+
+      - name: Fetch Updates for PvZ Hybrid (App 4)
+        run: |
+          echo "开始抓取 PvZ Hybrid..."
+          curl -s https://api.github.com/repos/Dey410/PvZ-Hybrid-For-iOS/releases/latest > release_pvz.json
+          
+          IPA_URL_PVZ=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .browser_download_url' release_pvz.json | head -n 1)
+          IPA_SIZE_PVZ=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .size' release_pvz.json | head -n 1)
+          TAG_NAME_PVZ=$(jq -r '.tag_name' release_pvz.json)
+          
+          if [ "$TAG_NAME_PVZ" != "null" ] && [ -n "$IPA_URL_PVZ" ]; then
+            # 精准替换 PvZ 数据，对应的是 .apps[3]
+            jq --arg url "$IPA_URL_PVZ" --argjson size "$IPA_SIZE_PVZ" --slurpfile rel release_pvz.json \
+               '.apps[3].version = $rel[0].tag_name | 
+                .apps[3].versionDate = $rel[0].published_at | 
+                .apps[3].versionDescription = $rel[0].body | 
+                .apps[3].downloadURL = $url | 
+                .apps[3].size = $size |
+                .apps[3].versions = [{"version": $rel[0].tag_name, "date": $rel[0].published_at, "localizedDescription": $rel[0].body, "downloadURL": $url, "size": $size}]' apps.json > tmp.json && mv tmp.json apps.json
+            echo "PvZ Hybrid 更新成功！"
           else
-            echo "未抓取到 Feather，跳过。"
+            echo "未抓取到 PvZ Hybrid，跳过。"
           fi
 
       - name: Commit and push changes
@@ -88,6 +77,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "所有软件版本均无变化，无需更新。"
           else
-            git commit -m "Auto-sync Liano's ipasource with 3 Apps"
+            git commit -m "Auto-sync with 4 Apps including PvZ Hybrid"
             git push
           fi
