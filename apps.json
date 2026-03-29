@@ -74,21 +74,21 @@
       "name": "PvZ Hybrid",
       "bundleIdentifier": "com.dey410.pvzhybrid",
       "developerName": "Dey410",
-      "version": "v0.17.1",
-      "versionDate": "2026-03-18T02:10:39Z",
-      "versionDescription": "更新内容看官网。",
+      "version": "v0.18.0.0",
+      "versionDate": "2026-03-28T11:49:51Z",
+      "versionDescription": "【iOS】植物大战僵尸杂交版v0.18.0.0同步更新",
       "localizedDescription": "植物大战僵尸杂交版 iOS 移植，尽享塔防乐趣。",
-      "downloadURL": "https://github.com/Dey410/PvZ-Hybrid-For-iOS/releases/download/v0.17.1/v0.17.1.ipa",
+      "downloadURL": "https://github.com/Dey410/PvZ-Hybrid-For-iOS/releases/download/v0.18.0.0/v0.18.0.0.ipa",
       "iconURL": "https://raw.githubusercontent.com/happier1125/liano-app-store/refs/heads/main/appicon/IMG_2128.png",
       "tintColor": "#000000",
-      "size": 356021699,
+      "size": 372534961,
       "versions": [
         {
-          "version": "v0.17.1",
-          "date": "2026-03-18T02:10:39Z",
-          "localizedDescription": "更新内容看官网。",
-          "downloadURL": "https://github.com/Dey410/PvZ-Hybrid-For-iOS/releases/download/v0.17.1/v0.17.1.ipa",
-          "size": 356021699
+          "version": "v0.18.0.0",
+          "date": "2026-03-28T11:49:51Z",
+          "localizedDescription": "【iOS】植物大战僵尸杂交版v0.18.0.0同步更新",
+          "downloadURL": "https://github.com/Dey410/PvZ-Hybrid-For-iOS/releases/download/v0.18.0.0/v0.18.0.0.ipa",
+          "size": 372534961
         }
       ]
     }
