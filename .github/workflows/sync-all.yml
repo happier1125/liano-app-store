@@ -58,15 +58,17 @@ jobs:
 
       - name: Fetch Updates for Kazumi (App 5)
         run: |
-          echo "开始抓取 Kazumi..."
+          echo "开始抓取 Kazumi，排除非 IPA 资产..."
+          # 明确请求最新 Release
           curl -s https://api.github.com/repos/Predidit/Kazumi/releases/latest > release_kazumi.json
           
+          # 核心逻辑：select(.name | endswith(".ipa")) 确保只选择 ipa 文件
           IPA_URL_KAZUMI=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .browser_download_url' release_kazumi.json | head -n 1)
           IPA_SIZE_KAZUMI=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .size' release_kazumi.json | head -n 1)
           TAG_NAME_KAZUMI=$(jq -r '.tag_name' release_kazumi.json)
           
-          if [ "$TAG_NAME_KAZUMI" != "null" ] && [ -n "$IPA_URL_KAZUMI" ]; then
-            # 更新对应位置的 Kazumi (.apps[4])
+          if [ "$TAG_NAME_KAZUMI" != "null" ] && [ -n "$IPA_URL_KAZUMI" ] && [ "$IPA_URL_KAZUMI" != "null" ]; then
+            echo "成功找到 Kazumi IPA: $TAG_NAME_KAZUMI"
             jq --arg url "$IPA_URL_KAZUMI" --argjson size "$IPA_SIZE_KAZUMI" --slurpfile rel release_kazumi.json \
                '.apps[4].version = $rel[0].tag_name | 
                 .apps[4].versionDate = $rel[0].published_at | 
@@ -74,9 +76,8 @@ jobs:
                 .apps[4].downloadURL = $url | 
                 .apps[4].size = $size | 
                 .apps[4].versions = [{"version": $rel[0].tag_name, "date": $rel[0].published_at, "localizedDescription": $rel[0].body, "downloadURL": $url, "size": $size}]' apps.json > tmp.json && mv tmp.json apps.json
-            echo "Kazumi 更新成功！"
           else
-            echo "未抓取到 Kazumi，跳过。"
+            echo "警告：在 Kazumi 的 Release 中未发现 .ipa 文件，请检查原仓库发布情况。"
           fi
 
       - name: Commit and push changes
@@ -84,10 +85,9 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add apps.json
-          
           if git diff --staged --quiet; then
-            echo "无变化，无需提交。"
+            echo "源文件无变化，无需提交。"
           else
-            git commit -m "Auto-sync: Remove IGFormat and Add Kazumi"
+            git commit -m "Auto-sync: Refined Kazumi IPA extraction"
             git push
           fi
