@@ -8,89 +8,66 @@
       "name": "PiliPlus",
       "bundleIdentifier": "com.bggRGjQaUbCoE.piliplus",
       "developerName": "bggRGjQaUbCoE",
-      "version": "2.0.2",
-      "versionDate": "2026-03-31T10:31:31Z",
-      "versionDescription": "性能优化\r\n优化查看图片\r\n优化滑动隐藏 FAB\r\n\r\n支持显示粉丝勋章，默认开\r\n校验 loudnorm 参数 #1871 by @Starfallan\r\n优化 #1868 #1877 by @My-Responsitories\r\nmacOS 启用媒体通知管理 #1872 by @stephen-zeng\r\n添加 Web 端用户投稿，支持页码跳转，按`最多收藏`排序\r\n缓存视频固定使用 HTTP/1.1 #1870 by @HeXis-YS @My-Responsitories\r\n\r\n修复解析动态页 UP 列表 #1876 co-by @ninatan777\r\n修复 bug",
+      "version": "1.0.0",
+      "versionDate": "2024-01-01T00:00:00Z",
+      "versionDescription": "初始化",
       "localizedDescription": "PiliPlus 客户端，专为更好的体验而生。",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.2/PiliPlus_ios_2.0.2%2B4814.ipa",
+      "downloadURL": "等待抓取",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#000000",
-      "size": 24978956,
-      "versions": [
-        {
-          "version": "2.0.2",
-          "date": "2026-03-31T10:31:31Z",
-          "localizedDescription": "性能优化\r\n优化查看图片\r\n优化滑动隐藏 FAB\r\n\r\n支持显示粉丝勋章，默认开\r\n校验 loudnorm 参数 #1871 by @Starfallan\r\n优化 #1868 #1877 by @My-Responsitories\r\nmacOS 启用媒体通知管理 #1872 by @stephen-zeng\r\n添加 Web 端用户投稿，支持页码跳转，按`最多收藏`排序\r\n缓存视频固定使用 HTTP/1.1 #1870 by @HeXis-YS @My-Responsitories\r\n\r\n修复解析动态页 UP 列表 #1876 co-by @ninatan777\r\n修复 bug",
-          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.2/PiliPlus_ios_2.0.2%2B4814.ipa",
-          "size": 24978956
-        }
-      ]
+      "size": 1000000
     },
     {
       "name": "阅读",
       "bundleIdentifier": "com.arekert.read",
       "developerName": "AREKERT",
-      "version": "1.2.2",
-      "versionDate": "2026-03-12T06:44:27Z",
-      "versionDescription": "ui大改，支持自定义背景，懒得写了\r\n<p align=\"center\"> <img src=\"https://github.com/user-attachments/assets/470856ee-ca61-485e-98fc-1ebdf2395dba\" width=\"32%\" /> <img src=\"https://github.com/user-attachments/assets/ec8ae6be-c164-4f21-b1ab-b53a33dba780\" width=\"32%\" /> <img src=\"https://github.com/user-attachments/assets/19c865cb-d6f7-47b1-95e5-01f10cf71418\" width=\"32%\" /> </p>",
+      "version": "1.0.0",
+      "versionDate": "2024-01-01T00:00:00Z",
+      "versionDescription": "初始化",
       "localizedDescription": "AREKERT 的 Read 阅读器，纯净的阅读体验。",
-      "downloadURL": "https://github.com/AREKERT/read/releases/download/1.2.2/qireader_1.2.2_1.ipa",
+      "downloadURL": "等待抓取",
       "iconURL": "https://raw.githubusercontent.com/AREKERT/read/refs/heads/main/img/AppIcon.png",
       "tintColor": "#000000",
-      "size": 9153313,
-      "versions": [
-        {
-          "version": "1.2.2",
-          "date": "2026-03-12T06:44:27Z",
-          "localizedDescription": "ui大改，支持自定义背景，懒得写了\r\n<p align=\"center\"> <img src=\"https://github.com/user-attachments/assets/470856ee-ca61-485e-98fc-1ebdf2395dba\" width=\"32%\" /> <img src=\"https://github.com/user-attachments/assets/ec8ae6be-c164-4f21-b1ab-b53a33dba780\" width=\"32%\" /> <img src=\"https://github.com/user-attachments/assets/19c865cb-d6f7-47b1-95e5-01f10cf71418\" width=\"32%\" /> </p>",
-          "downloadURL": "https://github.com/AREKERT/read/releases/download/1.2.2/qireader_1.2.2_1.ipa",
-          "size": 9153313
-        }
-      ]
+      "size": 1000000
     },
     {
       "name": "Feather",
       "bundleIdentifier": "com.claration.feather",
       "developerName": "CLARATION",
-      "version": "v2.6.0",
-      "versionDate": "2026-02-04T08:07:54Z",
-      "versionDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [PlumeImpactor](https://github.com/khcrysalis/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Migrated codebase to use the *OS 26 SDK with help from @Nyasami.\r\n* Added Liquid Glass icon.\r\n* Added iOS 26 BackgroundTasks API for background downloads.\r\n* Added appearance options for changing library icon appearance (Light/Dark) on iOS 18.0+ with help from @hugeBlack.\r\n  * Tinting options are available on iOS 18.2+.\r\n* Added appearance options for custom tint color.\r\n* Added success alert when updating SSL certificates by @planeklm.\r\n* Fixed issue where bundle was using outdated SSL certificates, causing common issues regarding being stuck on \"Ready\".\r\n* Fixed incorrect handling of `NSExtension` modifications by @Nyasami.\r\n* Fixed issue where certain app names would not appear in Library by @Nyasami.\r\n* Fixed an issue where certain apps weren't able to install by deleting a leftover `_CodeSignature` directory by @Nyasami.\r\n* Fixed issue where a malicious `.deb` was able to make Feather crash on launch.\r\n* Made the iOS 26+ arm64e slice fixup run regardless of version, mainly for exports.\r\n\r\n## Preview\r\n\r\n| <img width=\"3306\" height=\"1788\" alt=\"MERGED_IMAGE\" src=\"https://github.com/user-attachments/assets/6a0b6981-0b94-4b4b-9199-f14a4c1ffe61\" /> |\r\n|:-:|\r\n\r\n## New Contributors\r\n* @binnichtaktiv made their first contribution in https://github.com/khcrysalis/Feather/pull/548\r\n* @planeklm made their first contribution in https://github.com/khcrysalis/Feather/pull/572\r\n\r\n**Full Changelog**: https://github.com/khcrysalis/Feather/compare/v2.5.0...v2.6.0",
+      "version": "1.0.0",
+      "versionDate": "2024-01-01T00:00:00Z",
+      "versionDescription": "初始化",
       "localizedDescription": "CLARATION 的 Feather 客户端，轻量强大的侧载工具。",
-      "downloadURL": "https://github.com/CLARATION/Feather/releases/download/v2.6.0/Feather.ipa",
+      "downloadURL": "等待抓取",
       "iconURL": "https://raw.githubusercontent.com/happier1125/liano-app-store/refs/heads/main/appicon/IMG_2132.png",
       "tintColor": "#000000",
-      "size": 14118478,
-      "versions": [
-        {
-          "version": "v2.6.0",
-          "date": "2026-02-04T08:07:54Z",
-          "localizedDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [PlumeImpactor](https://github.com/khcrysalis/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Migrated codebase to use the *OS 26 SDK with help from @Nyasami.\r\n* Added Liquid Glass icon.\r\n* Added iOS 26 BackgroundTasks API for background downloads.\r\n* Added appearance options for changing library icon appearance (Light/Dark) on iOS 18.0+ with help from @hugeBlack.\r\n  * Tinting options are available on iOS 18.2+.\r\n* Added appearance options for custom tint color.\r\n* Added success alert when updating SSL certificates by @planeklm.\r\n* Fixed issue where bundle was using outdated SSL certificates, causing common issues regarding being stuck on \"Ready\".\r\n* Fixed incorrect handling of `NSExtension` modifications by @Nyasami.\r\n* Fixed issue where certain app names would not appear in Library by @Nyasami.\r\n* Fixed an issue where certain apps weren't able to install by deleting a leftover `_CodeSignature` directory by @Nyasami.\r\n* Fixed issue where a malicious `.deb` was able to make Feather crash on launch.\r\n* Made the iOS 26+ arm64e slice fixup run regardless of version, mainly for exports.\r\n\r\n## Preview\r\n\r\n| <img width=\"3306\" height=\"1788\" alt=\"MERGED_IMAGE\" src=\"https://github.com/user-attachments/assets/6a0b6981-0b94-4b4b-9199-f14a4c1ffe61\" /> |\r\n|:-:|\r\n\r\n## New Contributors\r\n* @binnichtaktiv made their first contribution in https://github.com/khcrysalis/Feather/pull/548\r\n* @planeklm made their first contribution in https://github.com/khcrysalis/Feather/pull/572\r\n\r\n**Full Changelog**: https://github.com/khcrysalis/Feather/compare/v2.5.0...v2.6.0",
-          "downloadURL": "https://github.com/CLARATION/Feather/releases/download/v2.6.0/Feather.ipa",
-          "size": 14118478
-        }
-      ]
+      "size": 1000000
     },
     {
       "name": "PvZ Hybrid",
       "bundleIdentifier": "com.dey410.pvzhybrid",
       "developerName": "Dey410",
-      "version": "v0.18.0.0",
-      "versionDate": "2026-03-28T11:49:51Z",
-      "versionDescription": "【iOS】植物大战僵尸杂交版v0.18.0.0同步更新",
+      "version": "1.0.0",
+      "versionDate": "2024-01-01T00:00:00Z",
+      "versionDescription": "初始化",
       "localizedDescription": "植物大战僵尸杂交版 iOS 移植，尽享塔防乐趣。",
-      "downloadURL": "https://github.com/Dey410/PvZ-Hybrid-For-iOS/releases/download/v0.18.0.0/v0.18.0.0.ipa",
+      "downloadURL": "等待抓取",
       "iconURL": "https://raw.githubusercontent.com/happier1125/liano-app-store/refs/heads/main/appicon/IMG_2128.png",
       "tintColor": "#000000",
-      "size": 372534961,
-      "versions": [
-        {
-          "version": "v0.18.0.0",
-          "date": "2026-03-28T11:49:51Z",
-          "localizedDescription": "【iOS】植物大战僵尸杂交版v0.18.0.0同步更新",
-          "downloadURL": "https://github.com/Dey410/PvZ-Hybrid-For-iOS/releases/download/v0.18.0.0/v0.18.0.0.ipa",
-          "size": 372534961
-        }
-      ]
+      "size": 1000000
+    },
+    {
+      "name": "Kazumi",
+      "bundleIdentifier": "com.predidit.kazumi",
+      "developerName": "Predidit",
+      "version": "1.0.0",
+      "versionDate": "2024-01-01T00:00:00Z",
+      "versionDescription": "初始化",
+      "localizedDescription": "Kazumi 是一款基于手机端的番剧搜索与播放工具。",
+      "downloadURL": "等待抓取",
+      "iconURL": "https://raw.githubusercontent.com/happier1125/liano-app-store/refs/heads/main/appicon/IMG_2250.jpeg",
+      "tintColor": "#000000",
+      "size": 1000000
     }
   ]
 }
