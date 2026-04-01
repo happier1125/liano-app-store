@@ -47,25 +47,36 @@ jobs:
 
       - name: Fetch Updates for PvZ Hybrid (App 4)
         run: |
-          echo "开始抓取 PvZ Hybrid..."
           curl -s https://api.github.com/repos/Dey410/PvZ-Hybrid-For-iOS/releases/latest > release_pvz.json
-          
           IPA_URL_PVZ=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .browser_download_url' release_pvz.json | head -n 1)
           IPA_SIZE_PVZ=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .size' release_pvz.json | head -n 1)
           TAG_NAME_PVZ=$(jq -r '.tag_name' release_pvz.json)
-          
           if [ "$TAG_NAME_PVZ" != "null" ] && [ -n "$IPA_URL_PVZ" ]; then
-            # 精准替换 PvZ 数据，对应的是 .apps[3]
             jq --arg url "$IPA_URL_PVZ" --argjson size "$IPA_SIZE_PVZ" --slurpfile rel release_pvz.json \
-               '.apps[3].version = $rel[0].tag_name | 
-                .apps[3].versionDate = $rel[0].published_at | 
-                .apps[3].versionDescription = $rel[0].body | 
-                .apps[3].downloadURL = $url | 
-                .apps[3].size = $size |
-                .apps[3].versions = [{"version": $rel[0].tag_name, "date": $rel[0].published_at, "localizedDescription": $rel[0].body, "downloadURL": $url, "size": $size}]' apps.json > tmp.json && mv tmp.json apps.json
-            echo "PvZ Hybrid 更新成功！"
+               '.apps[3].version = $rel[0].tag_name | .apps[3].versionDate = $rel[0].published_at | .apps[3].versionDescription = $rel[0].body | .apps[3].downloadURL = $url | .apps[3].size = $size | .apps[3].versions = [{"version": $rel[0].tag_name, "date": $rel[0].published_at, "localizedDescription": $rel[0].body, "downloadURL": $url, "size": $size}]' apps.json > tmp.json && mv tmp.json apps.json
+          fi
+
+      - name: Fetch Updates for Kazumi (App 5)
+        run: |
+          echo "开始抓取 Kazumi..."
+          curl -s https://api.github.com/repos/Predidit/Kazumi/releases/latest > release_kazumi.json
+          
+          IPA_URL_KAZUMI=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .browser_download_url' release_kazumi.json | head -n 1)
+          IPA_SIZE_KAZUMI=$(jq -r '.assets[] | select(.name | endswith(".ipa")) | .size' release_kazumi.json | head -n 1)
+          TAG_NAME_KAZUMI=$(jq -r '.tag_name' release_kazumi.json)
+          
+          if [ "$TAG_NAME_KAZUMI" != "null" ] && [ -n "$IPA_URL_KAZUMI" ]; then
+            # 更新对应位置的 Kazumi (.apps[4])
+            jq --arg url "$IPA_URL_KAZUMI" --argjson size "$IPA_SIZE_KAZUMI" --slurpfile rel release_kazumi.json \
+               '.apps[4].version = $rel[0].tag_name | 
+                .apps[4].versionDate = $rel[0].published_at | 
+                .apps[4].versionDescription = $rel[0].body | 
+                .apps[4].downloadURL = $url | 
+                .apps[4].size = $size | 
+                .apps[4].versions = [{"version": $rel[0].tag_name, "date": $rel[0].published_at, "localizedDescription": $rel[0].body, "downloadURL": $url, "size": $size}]' apps.json > tmp.json && mv tmp.json apps.json
+            echo "Kazumi 更新成功！"
           else
-            echo "未抓取到 PvZ Hybrid，跳过。"
+            echo "未抓取到 Kazumi，跳过。"
           fi
 
       - name: Commit and push changes
@@ -75,8 +86,8 @@ jobs:
           git add apps.json
           
           if git diff --staged --quiet; then
-            echo "所有软件版本均无变化，无需更新。"
+            echo "无变化，无需提交。"
           else
-            git commit -m "Auto-sync with 4 Apps including PvZ Hybrid"
+            git commit -m "Auto-sync: Remove IGFormat and Add Kazumi"
             git push
           fi
