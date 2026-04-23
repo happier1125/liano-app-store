@@ -52,21 +52,21 @@
       "name": "Feather",
       "bundleIdentifier": "com.claration.feather",
       "developerName": "CLARATION",
-      "version": "v2.7.0",
-      "versionDate": "2026-04-05T16:01:10Z",
-      "versionDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Added support for using remote pairing on 17.4+, for 17.3 and below, use a standard pairing file.\r\n* Added more recommended sources by @CelloSerenity in https://github.com/CLARATION/Feather/pull/585\r\n* Added option to inject into all available extensions within an app by @waruhachi in https://github.com/CLARATION/Feather/pull/592\r\n\r\n## New Contributors\r\n* @waruhachi made their first contribution in https://github.com/CLARATION/Feather/pull/592\r\n\r\n**Full Changelog**: https://github.com/CLARATION/Feather/compare/v2.6.0...v2.7.0",
+      "version": "v2.8.2",
+      "versionDate": "2026-04-22T09:18:46Z",
+      "versionDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Added support for Catalyst targets.\r\n* Added ability to rename existing certificates.\r\n* Added Arabic localizations by @mohammed1d1 in https://github.com/CLARATION/Feather/pull/624\r\n\r\n## New Contributors\r\n* @mohammed1d1 made their first contribution in https://github.com/CLARATION/Feather/pull/624\r\n\r\n**Full Changelog**: https://github.com/CLARATION/Feather/compare/v2.7.0...v2.8.2",
       "localizedDescription": "CLARATION 的 Feather 客户端，轻量强大的侧载工具。",
-      "downloadURL": "https://github.com/CLARATION/Feather/releases/download/v2.7.0/Feather.ipa",
+      "downloadURL": "https://github.com/CLARATION/Feather/releases/download/v2.8.2/Feather.ipa",
       "iconURL": "https://raw.githubusercontent.com/happier1125/liano-app-store/refs/heads/main/appicon/IMG_2132.png",
       "tintColor": "#000000",
-      "size": 14154834,
+      "size": 14242031,
       "versions": [
         {
-          "version": "v2.7.0",
-          "date": "2026-04-05T16:01:10Z",
-          "localizedDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Added support for using remote pairing on 17.4+, for 17.3 and below, use a standard pairing file.\r\n* Added more recommended sources by @CelloSerenity in https://github.com/CLARATION/Feather/pull/585\r\n* Added option to inject into all available extensions within an app by @waruhachi in https://github.com/CLARATION/Feather/pull/592\r\n\r\n## New Contributors\r\n* @waruhachi made their first contribution in https://github.com/CLARATION/Feather/pull/592\r\n\r\n**Full Changelog**: https://github.com/CLARATION/Feather/compare/v2.6.0...v2.7.0",
-          "downloadURL": "https://github.com/CLARATION/Feather/releases/download/v2.7.0/Feather.ipa",
-          "size": 14154834
+          "version": "v2.8.2",
+          "date": "2026-04-22T09:18:46Z",
+          "localizedDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Added support for Catalyst targets.\r\n* Added ability to rename existing certificates.\r\n* Added Arabic localizations by @mohammed1d1 in https://github.com/CLARATION/Feather/pull/624\r\n\r\n## New Contributors\r\n* @mohammed1d1 made their first contribution in https://github.com/CLARATION/Feather/pull/624\r\n\r\n**Full Changelog**: https://github.com/CLARATION/Feather/compare/v2.7.0...v2.8.2",
+          "downloadURL": "https://github.com/CLARATION/Feather/releases/download/v2.8.2/Feather.ipa",
+          "size": 14242031
         }
       ]
     },
