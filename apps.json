@@ -8,21 +8,21 @@
       "name": "PiliPlus",
       "bundleIdentifier": "com.bggRGjQaUbCoE.piliplus",
       "developerName": "bggRGjQaUbCoE",
-      "version": "2.0.8",
-      "versionDate": "2026-06-04T06:24:24Z",
-      "versionDescription": "更多 FAB 动画 #2265\r\n优化专栏视频跳转 #2148\r\n发布页发布按钮防抖 #2152\r\n限制视频弹出面板宽度 #2277\r\n锁定模式不处理分段跳转 #2143\r\n安卓画中画添加快进/快退按钮 #2251\r\n桌面端`可选文本`调整为横向触发 #2106\r\n安卓关闭系统动画时支持播放 GIF #2107\r\n安卓支持调节倾斜角度切换视频方向 #2140\r\n重构 Log #2216 by @My-Responsitories\r\n优化账号描述 #2280 by @My-Responsitories\r\njni 重构 #2244 #2255 by @My-Responsitories\r\n优化 win32 api #2246 by @My-Responsitories\r\n移除未用的图片资源 #2267 by @My-Responsitories\r\n重构缓存管理 #2266 #2276 by @My-Responsitories\r\n处理投票 URL Scheme #2105 by @My-Responsitories\r\n\r\n修复超分失效 #2112\r\n修复投币上限 #2192\r\n修复手势调节系统亮度幅度不一致 #2134\r\n修复 #2196 #2208 #2209 #2226 #2233 #2239 #2249\r\n修复部分设备无法播放 #2117 by @My-Responsitories",
+      "version": "2.0.8.1",
+      "versionDate": "2026-06-06T04:20:39Z",
+      "versionDescription": "增加私信消息点击范围 #2292\r\n\r\n修复专栏解析\r\n修复 #2295 #2308\r\n修复界面缩放时无法显示滚动弹幕 #2305",
       "localizedDescription": "PiliPlus 客户端，专为更好的体验而生。",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.8/PiliPlus_ios_2.0.8%2B5014.ipa",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.8.1/PiliPlus_ios_2.0.8%2B5024.ipa",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#000000",
-      "size": 23458920,
+      "size": 23460325,
       "versions": [
         {
-          "version": "2.0.8",
-          "date": "2026-06-04T06:24:24Z",
-          "localizedDescription": "更多 FAB 动画 #2265\r\n优化专栏视频跳转 #2148\r\n发布页发布按钮防抖 #2152\r\n限制视频弹出面板宽度 #2277\r\n锁定模式不处理分段跳转 #2143\r\n安卓画中画添加快进/快退按钮 #2251\r\n桌面端`可选文本`调整为横向触发 #2106\r\n安卓关闭系统动画时支持播放 GIF #2107\r\n安卓支持调节倾斜角度切换视频方向 #2140\r\n重构 Log #2216 by @My-Responsitories\r\n优化账号描述 #2280 by @My-Responsitories\r\njni 重构 #2244 #2255 by @My-Responsitories\r\n优化 win32 api #2246 by @My-Responsitories\r\n移除未用的图片资源 #2267 by @My-Responsitories\r\n重构缓存管理 #2266 #2276 by @My-Responsitories\r\n处理投票 URL Scheme #2105 by @My-Responsitories\r\n\r\n修复超分失效 #2112\r\n修复投币上限 #2192\r\n修复手势调节系统亮度幅度不一致 #2134\r\n修复 #2196 #2208 #2209 #2226 #2233 #2239 #2249\r\n修复部分设备无法播放 #2117 by @My-Responsitories",
-          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.8/PiliPlus_ios_2.0.8%2B5014.ipa",
-          "size": 23458920
+          "version": "2.0.8.1",
+          "date": "2026-06-06T04:20:39Z",
+          "localizedDescription": "增加私信消息点击范围 #2292\r\n\r\n修复专栏解析\r\n修复 #2295 #2308\r\n修复界面缩放时无法显示滚动弹幕 #2305",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.8.1/PiliPlus_ios_2.0.8%2B5024.ipa",
+          "size": 23460325
         }
       ]
     },
@@ -96,21 +96,21 @@
       "name": "Kazumi",
       "bundleIdentifier": "com.predidit.kazumi",
       "developerName": "Predidit",
-      "version": "2.1.3",
-      "versionDate": "2026-05-29T03:00:35Z",
-      "versionDescription": "- 新增Bangumi镜像支持\r\n> [!NOTE]\r\n> Bangumi镜像为实验性功能，在网络连通性良好时保持禁用",
+      "version": "2.1.4",
+      "versionDate": "2026-06-07T02:32:12Z",
+      "versionDescription": "- 新增默认设置重置功能 (#2176) (@Predidit)\r\n- 调整播放器HUD布局 (#2164) (@Predidit)\r\n- 修复 iOS/windows 平台截图可能导致崩溃的问题 (#2146) (@UzawaReisaQwQ @Predidit)\r\n- 修复吐槽编辑页面的布局错误 (#2142) (@UzawaReisaQwQ)\r\n- 改进的 Bangumi 同步错误提示 (@Predidit)\r\n- 其他构建系统改进 (@LiggMax)",
       "localizedDescription": "Kazumi 是一款基于手机端的番剧搜索与播放工具。",
-      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.1.3/Kazumi_ios_2.1.3_no_sign.ipa",
+      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.1.4/Kazumi_ios_2.1.4_no_sign.ipa",
       "iconURL": "https://raw.githubusercontent.com/happier1125/liano-app-store/refs/heads/main/appicon/IMG_2250.jpeg",
       "tintColor": "#000000",
-      "size": 28024764,
+      "size": 28025683,
       "versions": [
         {
-          "version": "2.1.3",
-          "date": "2026-05-29T03:00:35Z",
-          "localizedDescription": "- 新增Bangumi镜像支持\r\n> [!NOTE]\r\n> Bangumi镜像为实验性功能，在网络连通性良好时保持禁用",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.1.3/Kazumi_ios_2.1.3_no_sign.ipa",
-          "size": 28024764
+          "version": "2.1.4",
+          "date": "2026-06-07T02:32:12Z",
+          "localizedDescription": "- 新增默认设置重置功能 (#2176) (@Predidit)\r\n- 调整播放器HUD布局 (#2164) (@Predidit)\r\n- 修复 iOS/windows 平台截图可能导致崩溃的问题 (#2146) (@UzawaReisaQwQ @Predidit)\r\n- 修复吐槽编辑页面的布局错误 (#2142) (@UzawaReisaQwQ)\r\n- 改进的 Bangumi 同步错误提示 (@Predidit)\r\n- 其他构建系统改进 (@LiggMax)",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.1.4/Kazumi_ios_2.1.4_no_sign.ipa",
+          "size": 28025683
         }
       ]
     }
